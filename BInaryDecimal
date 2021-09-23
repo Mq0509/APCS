@@ -1,0 +1,5 @@
+HOW TO CONVERT BINARY TO DECIMAL
+Starting at the rightmost digit, the value assigned to it is 2^(n-1), n being how far the digit is from the lst digit. If the digit is a '1', you add its value to the sum and '0'has no value. The sum of all the '1' values is the decimal.
+
+HOW TO CONVERT DECIMAL TO BINARY
+Take the biggest power of 2 from the decimal. Take it again from the remainder. Repeat until no more powers of 2 ca be taken away. Starting from the right side, write 0s until the exponent power matches the one for a '1' value(the powers of 2 taken).
