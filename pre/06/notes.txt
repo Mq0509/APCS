@@ -1,0 +1,2 @@
+Loops
+I stil do not understand the enhanced for loop. The most difficult part of this was just getting the concept. 
