@@ -1,0 +1,2 @@
+Arrays
+I had a difficult time writing the array statements, often when I try to update a array, it wouldn't run. 
