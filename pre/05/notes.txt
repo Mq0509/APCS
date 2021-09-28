@@ -1,0 +1,2 @@
+Value Methods
+The syntax was hard to get used to, Racket did not really need symbols like ==. 
