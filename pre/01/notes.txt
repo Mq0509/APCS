@@ -1,0 +1,3 @@
+HelloWorld Notes 
+I have never used Java before, so the starter of the code was really new and interesting. 
+I never had to use semicolons for every line too, and later on, I would have errors because I forgot to use semicolons.
