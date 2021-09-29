@@ -1,0 +1,13 @@
+May Qiu
+APCS
+HW06 -- HW06/Languages/Writing Hello World in Different Languages
+2021-09-28
+
+Scheme: (display "Hello, world!")
+Netlogo: output-show "Hello, world!"
+Python: print("Hello, world")
+
+Q3: Our group all used print and display for Python and Scheme. 
+
+Q4: Our Netlogo code was different, my teammate, Salaj, used print "Hello World", while I used output-show. When I checked the Netlogo dictionary, I realized that
+Netlogo has many different ways to print a text. 
