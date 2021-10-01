@@ -7,12 +7,12 @@ HW 08 Refactor Freshie Zero/Greetings/Made greeting functions with three differe
 
 public class Greet{
 	public static  void main (String [] args){
-		greet ("Hola! How are you doing, Ducky?");
-   	        greet ("Hello, nice to meet you, Faiyaz!");
-    		greet("Hi, long time no see, Salaj.");
+		greet ("Ducky :) !");
+   	        greet ("Faiyaz!");
+    		greet("Salaj.");
 	}
 static void greet(String hi){
-	System.out.println(hi);
+	System.out.println("Nice to meet you, " + hi);
 }
 }
 
