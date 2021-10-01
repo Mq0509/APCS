@@ -14,6 +14,7 @@ public class Greet{
 static void greet(String hi){
 	System.out.println(hi);
 }
+}
 
 /* Discoveries
 There wasn't really anything new that I discovered. 
