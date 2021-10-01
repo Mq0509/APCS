@@ -13,7 +13,7 @@ public class Greet{
 	}
 }
 static void greet(String hi){
-	System.out.println("hi");
+	System.out.println(hi);
 }
 
 /* Discoveries
