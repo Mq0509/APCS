@@ -11,7 +11,6 @@ public class Greet{
    	        greet ("Hello, nice to meet you, Faiyaz!");
     		greet("Hi, long time no see, Salaj.");
 	}
-}
 static void greet(String hi){
 	System.out.println(hi);
 }
