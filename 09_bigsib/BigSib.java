@@ -1,6 +1,7 @@
-public static void main Bigsib.greet{
-}
-static void greet(String hi){
-	System.out.println("Nice to meet you, " + hi)
-}
+public class BigSib{
+  public static void main (String[]arg){
+  }
+  public static void greet(String[]arg){
+    System.out.println("Nice to meet you, " + hi")
+  }
 }
