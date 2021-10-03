@@ -1,5 +1,5 @@
 public class Greet{
-  public static void main (Strings [] args){
+  public static void main (String [] args){
     BigSib.greet("Jasmine");
     BigSib.greet("Joy");
     BigSib.greet("Stephanie");
