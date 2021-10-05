@@ -1,7 +1,7 @@
-    public class BigSib{
-  public static String main (String[]arg){
+public class BigSib{
+  public static void main (String[]arg){
   }
-  public static String greet(String hi){
+  public static void greet(String hi){
     System.out.println("Nice to meet you, " + hi);
   }
 }
