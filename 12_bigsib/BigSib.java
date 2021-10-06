@@ -1,6 +1,7 @@
 public class BigSib{
   public static void main (String[]arg){
   }
+  static String helloMsg;
     public static void SetHelloMsg(String HelloMsg){
        HelloMsg = helloMsg;
   }
