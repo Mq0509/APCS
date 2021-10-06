@@ -1,4 +1,4 @@
-May Qiu, Raven
+Bernard.Jr: May Qiu, Raven, Perry Jr, Bernard
 APCS
 HW12 -- On Elder Individuality and the Elimination of Radio Fuzz/Greetings with more variables/Created a new function that updated the value of 
 setHelloMsg so that the greeting is more unique for each greeting
