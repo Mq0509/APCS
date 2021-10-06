@@ -2,7 +2,7 @@ public class BigSib{
   public static void main (String[]arg){
   }
   static String helloMsg;
-    public static void SetHelloMsg(String HelloMsg){
+    public static void setHelloMsg(String HelloMsg){
        HelloMsg = helloMsg;
   }
   public static String greet(String hi){
