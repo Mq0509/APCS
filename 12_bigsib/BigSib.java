@@ -6,6 +6,6 @@ public class BigSib{
        HelloMsg = helloMsg;
   }
   public static String greet(String hi){
-    return SetHelloMsg + hi;
+    return helloMsg + hi;
   }
 }
