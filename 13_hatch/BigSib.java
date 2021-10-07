@@ -1,10 +1,10 @@
 public class BigSib{
 public BigSib(){                                          /* Constructor*/
-  String HelloMsg = "Word up";
+  String helloMsg = "Word up";
 }
   public static void main (String[]arg){
   }
-  private String HelloMsg;                               /*Instance Variable*/
+  String HelloMsg;                               /*Instance Variable*/
     public void setHelloMsg(String helloMsg){
        HelloMsg = helloMsg;
   }
