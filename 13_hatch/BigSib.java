@@ -5,7 +5,7 @@ public BigSib(){                                          /* Constructor*/
   public static void main (String[]arg){
   }
   private String HelloMsg;                               /*Instance Variable*/
-    public static void setHelloMsg(String helloMsg){
+    public void setHelloMsg(String helloMsg){
        HelloMsg = helloMsg;
   }
   public static String greet(String hi){
