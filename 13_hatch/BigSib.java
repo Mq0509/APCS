@@ -1,5 +1,5 @@
 public class BigSib{                                    /* Constructor*/
-  private String HelloMsg; /*Instance Variable*/
+  private String helloMsg; /*Instance Variable*/
   public BigSib(){
     helloMsg = "Word up";
   }
