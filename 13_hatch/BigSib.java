@@ -1,7 +1,7 @@
 public class BigSib{                                    /* Constructor*/
-  private String helloMsg; /*Instance Variable*/
+  private String HelloMsg; /*Instance Variable*/
   public BigSib(){
-    helloMsg = "Word up";
+    HelloMsg = "Word up";
   }
   public static void main (String[]arg){
   }
