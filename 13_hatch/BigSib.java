@@ -8,7 +8,7 @@ public BigSib(){                                          /* Constructor*/
     public void setHelloMsg(String helloMsg){
        HelloMsg = helloMsg;
   }
-  public static String greet(String hi){
+  public String greet(String hi){
     return HelloMsg + hi;
   }
 }
