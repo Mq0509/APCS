@@ -1,6 +1,6 @@
 public class BigSib{
 public BigSib(){                                          /* Constructor*/
-  String helloMsg = "Word up";
+  String HelloMsg = "Word up";
 }
   public static void main (String[]arg){
   }
