@@ -4,13 +4,7 @@
     HelloMsg = "Word up ";
   }
   public BigSib(){
-    HelloMsg = "Salutations ";
-    }
-   public BigSib(){
-    HelloMsg = "Hey ya ";
-    }
-    public BigSib(){
-    HelloMsg = "Sup ";
+    HelloMsg = "Hi, I had trouble with this defcon. How about you? ";
     }
   public static void main (String [] args){
   }
