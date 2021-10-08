@@ -1,7 +1,7 @@
 /*
 May Qiu
 APCS
-HW14 -- Customize Your Creation/Overloading the constructor so that it could take any
+HW14 -- Customize Your Creation/Overloading the constructor so that it could take any String value.
 2021-10-07
 
 Discoveries
