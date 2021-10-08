@@ -1,4 +1,4 @@
-May Qiu
+/*May Qiu
 APCS
 HW13 -- Where do BigSibs Come From?/Using Constructors in Replacement with Word Up(HW12)
 2021-10-06
@@ -18,7 +18,7 @@ QCC (paraphrased with May’s)
 - We followed our notes from class about keeping instance variables private, but we are uncertain about what specific effect setting this permission has.
 */
 
-QCC
+
 
   
   public class BigSib{                                  
