@@ -10,6 +10,6 @@ public class Greet {
                 greeting = tracy.greet("Dr. Spaceman");
                 System.out.println(greeting);
                 greeting = dotCom.greet("mom");
-                System.out.println(greet);
+                System.out.println(greeting);
          }
        }
