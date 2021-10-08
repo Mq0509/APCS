@@ -1,8 +1,5 @@
   public class BigSib{                                  
   private String HelloMsg; /*Instance Variable*/
-  public BigSib(){              /* Constructor*/
-    HelloMsg = "Word up ";
-  }
   public BigSib(){
     HelloMsg = "Hi, I had trouble with this defcon. How about you? ";
     }
