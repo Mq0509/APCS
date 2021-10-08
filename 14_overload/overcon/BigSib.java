@@ -1,7 +1,7 @@
   public class BigSib{                                  
   private String HelloMsg; /*Instance Variable*/
-  BigSib(){              /* Constructor*/
-    HelloMsg = "Word up ";
+  public BigSib(String msg){              /* Constructor*/
+    HelloMsg = msg ;
   }
   public static void main (String [] args){
   }
