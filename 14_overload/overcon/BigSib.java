@@ -17,9 +17,7 @@ I have difficulty determining what is local, and how to type my code accordingil
   
   public class BigSib{                                  
   private String HelloMsg; /*Instance Variable*/
-  public BigSib(){
-    HelloMsg = "What up ";
-  }
+
     public BigSib(String msg){              /* Constructor*/
     HelloMsg = msg ;
   }
