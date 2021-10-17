@@ -58,3 +58,4 @@ public class BankAccount {
 			System.out.println("balance: "+myDuck.bal+" dollars");
 		}
 	}
+}
