@@ -19,49 +19,40 @@ public class BankAccount {
 	private int accountNum;
 	private double bal;
 
-	public void SetAcctHolder(String name){
+	public void SetAcctInfo(String name, String pw, int PinInput, int acctNum, double startBal){
 		acctHolder=name;
-	}
-
-	public void SetPassword(String pw){
 		password=pw;
-	}
-
-	public void SetPin(int PinInput){
 		pin=PinInput;
-	}
-
-	public void SetAcctNum(int acctNum){
 		accountNum=acctNum;
-	}
-
-	public void SetBal(double startBal){
 		bal=startBal;
 	}
 
+	public void DepositMoney(double paycheck){
+		bal= bal + paycheck;
+	}
+
+	public void WithdrawMoney(double moneySpent){
+		bal= bal - moneySpent;
+	}
+
+	public static void PrintInfo(String accttholder, String password, int pin, int accountNum, int bal, double paycheck, double moneySpent){
+				BankAccount myDuck = new BankAccount();
+
+				myDuck.SetAcctInfo("Von Geburt","nunyazbizniz",3217,448921,1);
+				myDuck.DepositMoney(.05);
+				myDuck.WithdrawMoney(.5);
+
+				System.out.println("account holder: "+myDuck.acctHolder);
+				System.out.println("password: "+myDuck.password);
+				System.out.println("pin: "+myDuck.pin);
+				System.out.println("account number: " +myDuck.accountNum);
+				if (myDuck.bal==1) {
+					System.out.println("balance: "+myDuck.bal+" dollar");
+				} else {
+					System.out.println("balance: "+myDuck.bal+ " dollars");
+				}
+	}
 	public static void main(String[] args){
-		BankAccount myDuck = new BankAccount();
-
-		myDuck.SetAcctHolder("Von Geburt");
-		myDuck.SetPassword("nunyazbizniz");
-		myDuck.SetPin(3217);
-		myDuck.SetAcctNum(448921);
-		myDuck.SetBal(1);
-
-		System.out.println("account holder: "+myDuck.acctHolder);
-		System.out.println("password: "+myDuck.password);
-		System.out.println("pin: "+myDuck.pin);
-		System.out.println("account number: "+myDuck.accountNum);
-		if (myDuck.bal==1) {
-			System.out.println("balance: "+myDuck.bal+" dollar");
-		} else {
-			System.out.println("balance: "+myDuck.bal+" dollars");
-		}
-	}
-	public double DepositMoney(double bal, double paycheck){
-		return (bal + paycheck);
-	}
-	public double WithdrawMoney(double bal, double moneySpent){
-	return (bal - moneySpent);
+		PrintInfo("Von Geburt", "nunyazbizniz", 3217, 448921, 1, .05, .5);
 	}
 }
