@@ -61,7 +61,7 @@ public class BankAccount {
 	public double DepositMoney(double bal, double paycheck){
 		return (bal + paycheck);
 	}
-	public static double WithdrawMoney(double bal, double moneySpent){
-		return (myDuck.bal - moneySpent);
+	public double WithdrawMoney(double bal, double moneySpent){
+	return (bal - moneySpent);
 	}
 }
