@@ -57,3 +57,4 @@ public class BankAccount {
 		} else {
 			System.out.println("balance: "+myDuck.bal+" dollars");
 		}
+	}
