@@ -58,4 +58,10 @@ public class BankAccount {
 			System.out.println("balance: "+myDuck.bal+" dollars");
 		}
 	}
+	public static double DepositMoney(double bal, double paycheck){
+		return (myDuck.bal + paycheck);
+	}
+	public static double WithdrawMoney(double bal, double moneySpent){
+		return (myDuck.bal - moneySpent);
+	}
 }
