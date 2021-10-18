@@ -3,6 +3,9 @@ Trio number int x (Orion Roven, May Qiu, Lawrence Joa)
 APCS
 HW18_BankAccount (use UML diagram)
 10/14/21
+Q2: Before we create a default constructor and use BankAccount myDuck = new BankAccount();, we are creating an instance variable myDuck.
+Because we can make an instance variable with no arguments we know that there is a default constructor.
+Q3: Assuming that a String representation of an object means (String object), then we could use System.out.prinln(String myDuck), because myDuck is an object.
 DISCO:
 main must be static
 in order to maintain proper pluraity of the word dollar, we can use an if else statement that checks if bal==1
