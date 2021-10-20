@@ -1,0 +1,2 @@
+Methods Notes
+The syntax for if was very different. 
