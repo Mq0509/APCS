@@ -1,1 +1,3 @@
-Nothing was really noticable, the only small thing I had to fix was the syntax.
+Date and Time Notes 
+I had difficulties doing the code starters because it was my first time. When I was doing this, 
+I found all the lines of System.out.print to be really inefficient.
