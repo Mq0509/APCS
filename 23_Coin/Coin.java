@@ -3,7 +3,6 @@
  Hw 23 // Randomness and Bias in methods
  2021-10-24
  DISCO
-
  We learned that putting Coin other into the input creates a new instance of class Coin
  
  QCC
