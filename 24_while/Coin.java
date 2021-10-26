@@ -10,7 +10,6 @@ has whatever functionality that you desire
 Also this() method reruns constructor (can rerun overloaded ones if you add more args)
 Questions: 
 Why did the method assignValue in class Coin have args even though they are never used (works without it,but doesn't throw error when actually used)?
-How would you use the equal method to know the upFace value? We had trouble getting the headsCtr to show up because of it being private and static
 Mods: 
 Changed every single method except reset() toString(). 
 We re-wrote equals(), assignValue() and all the constructors to make them more efficient and cleaner but other than that functionality remained the same.
@@ -19,80 +18,84 @@ In all the functionality didn't change but we just cleaned up our code and made 
 ***/
 
 
-public class Driver {
 
-  public static void main( String[] args ) {
+public class Coin {
+  //Initializing instance variables
+  private double value;
+  private String upFace, name;
+  public int flipCtr, headsCtr, tailsCtr;
+  private double bias = 0.5;
 
-    
+  //Constructors (this() just calls the constructor with the same number/type of parameters as args giver)
+  public Coin() {
+    reset("heads",0.5);
+  }
 
+  public Coin(String s) {
+    this();
+    name = s;
+    assignValue(/*s*/);
+  }
 
-    //test default constructor
-    /*===================TOP==========================
-      Coin mine = new Coin();
-      //test 1st overloaded constructor
-      Coin yours = new Coin( "quarter" );
-      //test 2nd overloaded constructor
-      Coin wayne = new Coin( "dollar", "heads" );
-      //test toString() methods of each Coin
-      System.out.println("mine: " + mine);
-      System.out.println("yours: " + yours);
-      System.out.println("wayne: " + wayne);
-      //test flip() method
-      System.out.println("\nAfter flipping...");
-      yours.flip();
-      wayne.flip();
-      System.out.println("yours: " + yours);
-      System.out.println("wayne: " + wayne);
-      //test equals() method
-      if ( yours.equals(wayne) ) {
-        System.out.println( "Matchee matchee!" );
-      }
-      else {
-        System.out.println( "No match. Firestarter you can not be." );
-      }
-      ====================BOTTOM======================*/
-
-      //Pre loop
-      Coin yours = new Coin("quarter");
-      Coin wayne = new Coin("penny", "tails");
-
-      System.out.println("\nBefore flip loop\n");
-      System.out.println("Yours:" + yours);
-      System.out.println("\nWayne:" + wayne);
-      //Looping System
-      double numMatches = 0; //has to greater than 2005 * 33 because greater than 65536 matches and divisible by 2005 (birthyear)
-      double totalFlips = 0; //to see if bias is actually working
-      double headsCtr = 0;
-      while (numMatches > 65536 && (numMatches % 2005) == 0 && headsCtr >= 37568 && numMatches >= 69872) {
-        yours.flip();
-        wayne.flip();
-        if ( yours.equals(wayne) ) {
-          numMatches ++;
-        }
-        if ( yours.equals(wayne) ) {
-          headsCtr ++;
-        }
-        totalFlips ++;
-      }
-
-      //Post loop summary
-      System.out.println("\nAfter flip loop\n");
-      System.out.println("Yours:" + yours);
-      System.out.println("\nWayne:" + wayne);
-
-      System.out.print("\nPercentages/Stats\n");
-      System.out.print("totalFlips: " + totalFlips);
-      System.out.print(", numMatches: " + numMatches);
-      System.out.println(", Percent match: " + numMatches / totalFlips);
+  public Coin(String s, String nowFace) {
+    this(s);
+    upFace = nowFace;
+  }
 
 
+  //Assigns the value based on the name
+  private double assignValue(/*String s*/) { //Don't need the input, but for some reason still have it?
+    if (name.equals("penny"))         { value = 0.01; }
+    else if (name.equals("nickel"))   { value = 0.05; }
+    else if (name.equals("dime"))   { value = 0.1; }
+    else if (name.equals("quarter"))   { value = 0.25; }
+    else if (name.equals("half dollar"))   { value = 0.5; }
+    else if (name.equals("dollar"))   { value = 1.0; }
+    return value;
+  }
 
+  //Resets coin to original state
+  public void reset(String s, double d) {
+    flipCtr = 0;
+    tailsCtr = 0;
+    headsCtr = 0;
+    upFace = s;
+    bias = d;
+  }
 
+  //Flip the coin based on bias (Math.random() generates a value in the range [0.0,1.0) )
+  public String flip() {
+    double randNum = Math.random();
+    if (randNum < bias) {
+      upFace = "heads";
+      headsCtr += 1;
+    }
+    else {
+      upFace = "tails";
+      tailsCtr += 1;
+    }
 
+    flipCtr += 1;
+    return upFace;
+  }
 
+  //Replaces java's built in equals method for all classes of COIN, not other classes
+  public boolean equals(Coin obj) { return upFace.equals(obj.upFace); } //Works because upFace and obj.upFace are both strings
+  
+  //Replaces java's toString method (More efficient method, but doesn't display enough information).
+  //public String toString() { return "" + name + "--" + upFace; }
 
-      
-
-  }//end main()
-
-}//end class
+  //Replaces java's toString method (Less efficient but display all instance variables in an organized manner)
+  public String toString() {
+    String str;
+    str = "\n==== " + "Coin name: " + name + " ====";
+    str = str + "\nvalue: " + value;
+    str = str + "\nupFace: " + upFace;
+    str = str + "\nbias: " + bias;
+    str = str + "\nheadsCtr: " + headsCtr;
+    str = str + "\ntailsCtr: " + tailsCtr;
+    str = str + "\nflipCtr: " + flipCtr;
+    str = str + "\n=====================";
+    return str;
+  }
+}
