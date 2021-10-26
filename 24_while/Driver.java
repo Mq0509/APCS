@@ -10,6 +10,7 @@ has whatever functionality that you desire
 Also this() method reruns constructor (can rerun overloaded ones if you add more args)
 Questions: 
 Why did the method assignValue in class Coin have args even though they are never used (works without it,but doesn't throw error when actually used)?
+How would you use the equal method to know the upFace value? We had trouble getting the headsCtr to show up because of it being private and static
 Mods: 
 Changed every single method except reset() toString(). 
 We re-wrote equals(), assignValue() and all the constructors to make them more efficient and cleaner but other than that functionality remained the same.
@@ -58,16 +59,18 @@ public class Driver {
       System.out.println("\nBefore flip loop\n");
       System.out.println("Yours:" + yours);
       System.out.println("\nWayne:" + wayne);
-
       //Looping System
       double numMatches = 0; //has to greater than 2005 * 33 because greater than 65536 matches and divisible by 2005 (birthyear)
       double totalFlips = 0; //to see if bias is actually working
-
-      while (numMatches < (2005 * 33)) {
+      double headsCtr = 0;
+      while (numMatches > 65536 && (numMatches % 2005) == 0 && headsCtr >= 37568 && numMatches >= 69872) {
         yours.flip();
         wayne.flip();
         if ( yours.equals(wayne) ) {
           numMatches ++;
+        }
+        if ( yours.equals(wayne) ) {
+          headsCtr ++;
         }
         totalFlips ++;
       }
