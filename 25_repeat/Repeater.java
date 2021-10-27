@@ -3,7 +3,7 @@ Team number int x (Orion Roven, May Qiu, Lawrence Joa)
 APCS
 HW_25 - Do I Repeat Myself?
 10/26/21
-
+Time: .5 hrs
 Discoveries
 Lawrence is the fastest typer.
 When printing a new line, we can use +'\n'+ or +"\n"+
