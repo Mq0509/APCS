@@ -1,7 +1,9 @@
 public String doubleChar(String str) {
   String ans="";
-  for(int i=str.length();i<str.length();i--){
-    ans += str.substring(i-1,i);
+  for(int i=0;i<str.length();i++){
+    ans += str.substring(i,i+1);
+    ans += str.substring(i,i+1);
   }
   return ans;
 }
+
