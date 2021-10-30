@@ -4,9 +4,9 @@ public class helloName{
 public String helloName(String name) {
   return "Hello " + name + "!";
 }
-  public String main(String [] args){
-return helloName("Bob"); /* → "Hello Bob!" */
-return helloName("Alice"); /*  → "Hello Alice!" */
-return helloName("X"); /* → "Hello X!" */
+  public static void main(){
+    System.out.println (helloName("Bob")); /* → "Hello Bob!" */
+    System.out.println (helloName("Alice")); /*  → "Hello Alice!" */
+    System.out.println (helloName("X")); /* → "Hello X!" */
 }
 }
