@@ -4,7 +4,7 @@ public class helloName{
 public String helloName(String name) {
   return "Hello " + name + "!";
 }
-  public static void main(){
+  public void main(){
     System.out.println (helloName("Bob")); /* → "Hello Bob!" */
     System.out.println (helloName("Alice")); /*  → "Hello Alice!" */
     System.out.println (helloName("X")); /* → "Hello X!" */
