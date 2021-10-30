@@ -4,7 +4,7 @@ public class helloName{
 public String helloName(String name) {
   return "Hello " + name + "!";
 }
-  public static String main(String [] args){
+  public String main(String [] args){
 return helloName("Bob"); /* → "Hello Bob!" */
 return helloName("Alice"); /*  → "Hello Alice!" */
 return helloName("X"); /* → "Hello X!" */
