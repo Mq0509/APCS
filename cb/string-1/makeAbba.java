@@ -5,8 +5,8 @@ public class makeAbba{
   return a + b + b + a;
 }
   public static String main(String [] args){
-    return makeAbba("Hi", "Bye") /* → "HiByeByeHi" */
-    return makeAbba("Yo", "Alice") /* → "YoAliceAliceYo" */
-    return makeAbba("What", "Up") /* → "WhatUpUpWhat" */
+    return makeAbba("Hi", "Bye"); /* → "HiByeByeHi" */
+    return makeAbba("Yo", "Alice"); /* → "YoAliceAliceYo" */
+    return makeAbba("What", "Up"); /* → "WhatUpUpWhat" */
     }
 }
