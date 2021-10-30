@@ -4,9 +4,9 @@ public class makeAbba{
   public static String makeAbba(String a, String b) {
   return a + b + b + a;
 }
-  public static String main(String [] args){
+  public static void main(String [] args){
     System.out.println (makeAbba("Hi", "Bye")); /* → "HiByeByeHi" */
     System.out.println (makeAbba("Yo", "Alice")); /* → "YoAliceAliceYo" */
-    return makeAbba("What", "Up"); /* → "WhatUpUpWhat" */
+    System.out.println (makeAbba("What", "Up"); /* → "WhatUpUpWhat" */
     }
 }
