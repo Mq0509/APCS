@@ -6,7 +6,7 @@ public class makeAbba{
 }
   public static String main(String [] args){
     return makeAbba("Hi", "Bye"); /* → "HiByeByeHi" */
-    return makeAbba("Yo", "Alice"); /* → "YoAliceAliceYo" */
-    return makeAbba("What", "Up"); /* → "WhatUpUpWhat" */
+    System.out.println (makeAbba("Yo", "Alice")); /* → "YoAliceAliceYo" */
+    System.out.println (makeAbba("What", "Up")); /* → "WhatUpUpWhat" */
     }
 }
