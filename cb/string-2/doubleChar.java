@@ -1,7 +1,7 @@
 /* Given a string, return a string where for every char in the original, there are two chars. */
 
 public class doubleChar{
-  public String doubleChar(String str) {
+ public static String doubleChar(String str) {
   String ans="";
   for(int i=0;i<str.length();i++){
     ans += str.substring(i,i+1);
