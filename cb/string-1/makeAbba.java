@@ -7,6 +7,6 @@ public class makeAbba{
   public static void main(String [] args){
     System.out.println (makeAbba("Hi", "Bye")); /* → "HiByeByeHi" */
     System.out.println (makeAbba("Yo", "Alice")); /* → "YoAliceAliceYo" */
-    System.out.println (makeAbba("What", "Up"); /* → "WhatUpUpWhat" */
+    System.out.println (makeAbba("What", "Up")); /* → "WhatUpUpWhat" */
     }
 }
