@@ -15,4 +15,5 @@ public static void main(String [] args){
   System.out.println(countCode1("codexxcode")); /* → 2 */
   System.out.println(countCode1("cozexxcope")); /* → 2 */
 }
+}
 
