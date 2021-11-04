@@ -123,5 +123,4 @@ public class Pig
     System.out.println(allVowels("chocolate"));
 
   }//end main()
-
 }//end class Pigs
