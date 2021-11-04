@@ -26,7 +26,6 @@
  *      then develop and test one method at a time.
  *      NEVER STRAY TOO FAR FROM COMPILABILITY/RUNNABILITY!
  ***/
-
 public class Pig
 {
   //Q: How does this initialization make your life easier?
