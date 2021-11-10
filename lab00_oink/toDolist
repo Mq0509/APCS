@@ -1,0 +1,32 @@
+TNPG: MYLE: May Qiu, Lindsay Phung, Yuki Feng
+LAB 00
+To Do list:
+
+The point of this this pig latin translator is to convert English to Pig Latin, accounting for separate instances.
+
+GENERAL RULES:
+
+    Move leading consonant to end of word, append “ay”
+    If word begins with a vowel, append “way”
+
+EXTRA RULES:
+
+    Consider y a vowel when appropriate. ( yellow -> ellowyay, tryst -> ysttray )
+    Handle multiple consonants at beginning of word ( stew, thrice, etc. )
+    Capitalization ( Pig -> Igpay )
+    Punctuation ( Pig is king. -> Igpay isway ingkay. )
+
+TEST CASES:
+
+ pig -> igpay
+ am -> maway
+ yellow -> elloway
+ rhythm -> rhythm
+ aerial -> rialaeway
+ chair -> airchay
+ Pig -> Igpay
+ Pig. -> Igpay.
+ Hello world. -> Ellohay orldway.
+ Self-restrained -> elfsay-estrainedray
+
+The test cases is the order in which we will implement our methods, accounting for each test case as we go.
