@@ -4,7 +4,6 @@ APCS
 LAB 00
 2021-11-08
 time spent: 1.67 hrs
-
 DISCO
 - we spent a lot of time on making it so that "tsk" can be translated... we ended up taking out the '=' in hasAVowel
 - "we are girlbosses," said by Yuki Feng
@@ -15,13 +14,14 @@ QCC
 */
 
 import java.util.Scanner;
-import java.util.Array;
+import java.util.Arrays;
 
 public class Pig {
 
     private static final String VOWELS = "aeiouy";
     private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String PUNCS = ".,:;!?";
+    private static final String space = " ";
 
     public static boolean hasA (String w, String letter ) {
        return w.indexOf(letter) != -1;
@@ -33,6 +33,21 @@ public class Pig {
 
     public static int countVowels(String w) {
        return allVowels(w).length();
+    }
+
+    public static boolean isASpace(String w) {
+      return space.indexOf(w) != -1;
+    }
+
+    public static int countSpaces(String w) {
+      String ans = "";
+      for (int i = 0; i < w.length(); i++) {
+         if (isASpace(w.substring(i,i+1)))
+            ans += w.substring(i, i+1);
+      } return ans.length();
+    }
+    public static boolean hasASpace(String w) {
+      return (countSpaces(w) > 0);
     }
 
     public static boolean hasAVowel(String w) {
@@ -66,20 +81,6 @@ public class Pig {
       return isAVowel( w.substring(0,1) );
     }
 
-    public static String engToPig (String w) {
-     String ans = "";
-     if (beginsWithVowel(w)) {
-       ans = w + "way";
-     }
-     else if (!hasAVowel(w)) {
-       return w;
-     }
-     else {
-       int vPos = w.indexOf(firstVowel (w));
-       ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
-     }
-     return ans;
-   }
 
     /*=====================================
       boolean isPunc(String) -- tells whether a character is punctuation
@@ -127,8 +128,47 @@ public class Pig {
 	     return isUpperCase(w.substring(0,1) );
     }
 
+    //splitting multiple word input into arrays..?
+
+    /* public static String[] wordAloner (String w) {
+      // String words[] = w.split(" ");
+      // for (int i = 0; i <= w.length(); i++) {
+      //    return (words[i]);
+      // } return words;
+        String words[] = w.split(" ");
+        String newWords[] = new words[words.length() + 1];
+        // Iterating over the string
+        for (int i = 0; i < words.length; i++) {
+            // Printing the elements of String array
+             System.out.print(words[i]);
+        } return null;
+    }
+    */
+
+    public static String engToPig (String w) {
+      String ans = "";
+      if (beginsWithUpper(w)) {
+        w = w.substring(0).toLowerCase();
+        for (int i = 0, i <= w.length(); i++) {
+          ans = w.substring(0).toLowerCase() + w.substring(1, -1)
+        }
+      }
+      else if (beginsWithVowel(w)) {
+        ans = w + "way";
+      }
+      else if (!hasAVowel(w)) {
+        return w;
+      }
+      else {
+        int vPos = w.indexOf(firstVowel (w));
+        ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+      }
+      return ans;
+    }
+
     public static void main(String[] args) {
-    /* System.out.println("isAVowel: " + isAVowel("f") + isAVowel("a")); //expected result:false
+    /*
+    System.out.println("isAVowel: " + isAVowel("f") + isAVowel("a")); //expected result:false
     System.out.println("countVowels: " + countVowels("banana") ); //3 vowels
     System.out.println("hasAVowel: " + hasAVowel("aura")); // true
     System.out.println("allVowels: " + allVowels("eunoia")); // euoia
@@ -140,7 +180,12 @@ public class Pig {
     System.out.println("isUpperCase: " + isUpperCase("H")); //true
     System.out.println("hasPunc: " + hasPunc("world")); //true
     System.out.println("beginsWithUpper: " + beginsWithUpper("Yoinks")); // true
+    System.out.println("isASpace: " + isASpace(" ")); //true
+    System.out.println("countSpaces: " + countSpaces("hello we are MYLE")); // 3
+    System.out.println("hasASpace: " + hasASpace("hello world")); // true
     */
+
+    System.out.println("wordAloner: " + wordAloner("hello world")); // true
     for(String word: args) {
     System.out.println( "allVowels \t" + allVowels(word) );
     System.out.println( "allConsonants \t" + allConsonants(word) );
