@@ -19,17 +19,16 @@
 **/
 
 import java.util.Scanner;  //Scanner is not part of java's std lib
+import Pig.java;
 
 public class DemoScanner {
 
   public static void main( String[] args ) {
-
     //instantiate a Scanner with STDIN as its bytestream
-    Scanner sc = new Scanner( words.in );
-
+    Scanner sc = new Scanner( System.in );
     while( sc.hasNext() ) {
-      System.out.println( sc.next() );
-      System.out.println( sc.next() );
+      engToPig(sc.nextLine());
+      System.out.println(sc.nextLine().engToPig(sc.hasNext()));
     }
 
   }//end main()
