@@ -6,6 +6,7 @@ countEvens([2, 1, 2, 3, 4]) → 3
 countEvens([2, 2, 0]) → 3
 countEvens([1, 3, 5]) → 0
 */
+  public class countEvens{
   public static int countEvens(int[] nums) {
   int ans=0;
   for (int i = 0; i < nums.length; i++) {
@@ -18,4 +19,5 @@ countEvens([1, 3, 5]) → 0
     System.out.println(countEvens(new int[]{2,1,2,3,4}));
     System.out.println(countEvens(new int[]{2,2,0}));
     System.out.println(countEvens(new int []{1,3,5}));
+  }
   }
