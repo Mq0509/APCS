@@ -8,11 +8,19 @@
  * Devise a plan of attack with your trio.
  * Code incrementally, testing each bit of new functionality as you go.
  * The only modification you should make to this driver file is moving comment bar down in main method, and filling in DISCO/QCC
- * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
+ * (If you feel other change are merited, note what and why, so that we may discuss on the 'morrow.)
  *
  * DISCO:
+ first forcused on making the code compilable through making empty methods with their return values.
  *
  * QCC:
+ YoRPG.java:87: error: constructor Protagonist in class Protagonist cannot be applied to given types;
+    pat = new Protagonist( name );
+          ^
+          required: no arguments
+          found: String
+          reason: actual and formal argument lists differ in length
+
  *
  **********************************************/
 
@@ -20,7 +28,6 @@ import java.io.*;
 import java.util.*;
 
 public class YoRPG {
-
   // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
 
   //change this constant to set number of encounters in a game
@@ -85,7 +92,7 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Protagonist( name );
+    pat = new Protagonist(name);
 
   }//end newGame()
 
