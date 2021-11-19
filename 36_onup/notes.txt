@@ -1,0 +1,50 @@
+Always code incrementally!!!
+The first error is what matters, the rest may be affected by the first error.
+
+--Compile-time errors: something wrong with syntax--
+Normally, the error is before where they say the error is. Sometimes it is somewhere else entirely.
+Common Syntax Errors:
+1.Check for parentheses and brackets
+2.Uppercase != lowercase
+3.Semicolons
+4.Strings have matching double quotation marks, characters have single
+5.assignment statement, left type = right type
+6.Method invocation: arguments are in right order and type
+7.value method, needs return; void method, no return
+8.Invoking instance method on object with right type. dot notations when invoking static method from another class
+9.instance method, can refer to instance vars without specifying object
+
+Debugging by bisection:
+Have backup file
+Delete half of code and check for errors; repeat while adding in more code when errors are found
+
+Error messages proves that something is wrong, but it is NOT RELIABLE for fixing advice
+
+--Run-time errors: something goes wrong while program is running--
+hanging:program stops and does nothing
+can add print statements "entering the loop" & "exiting the loop" if exit does not appear, its a infinite loop
+infinite loop: can writing print statements (values of variables in the condition and the value of the condition) at end of loop
+
+infinite recursion: often states StackOverflowError
+check for base case, if there is a base case, write print statements at beginning of methods that displays the parameters to see why it is not going to base case
+
+NullPointerException:tried to acess an instance variable or invoke a method on an object that is currently null.
+ArrayIndexOutOfBoundsException:the index The index is below 0 of more than the array length.
+StackOverflowError:infinite recursion
+FileNotFoundException:Java did not find the file
+ArithmeticException:Arithmetic oprtation went wrong
+
+
+--Logic errors: causes program to do wrong thing--
+more of an issue with ourselves, need to make sure we understand and can code it correctly. Test the methods one by one and see the difference between expectaions and the code.
+
+Common Logic errors
+integer division rounds toward 0
+never use == on doubles
+check equivalence -> use equals method
+
+Do not write code all at once, make it more clear to outsiders, with temporary vars
+Use duckies
+Get a breath of fresh air
+
+ThinkJava tells us to make a backup file when doing bisectioning. eg: Bob.java.old -> I did not know that would work through the terminal
