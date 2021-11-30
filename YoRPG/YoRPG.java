@@ -10,18 +10,26 @@
  * The only modification you should make to this driver file is moving comment bar down in main method, and filling in DISCO/QCC
  * (If you feel other change are merited, note what and why, so that we may discuss on the 'morrow.)
  *
+ * Kleemex -- Lindsay Phung, May Qiu, Xinqing Lin
+ * APCS
+ * YoRPG -- roleplaying game
+ * 2021-11-20
+ * time spent:
+ *
  * DISCO:
- first forcused on making the code compilable through making empty methods with their return values.
+ * - First forcused on making the code compilable through making empty methods with their respective return values.
+ * - We learned that we could first make a method void to see what return type it should yield rather than looking through the code for the return type.
  *
  * QCC:
- YoRPG.java:87: error: constructor Protagonist in class Protagonist cannot be applied to given types;
-    pat = new Protagonist( name );
+ * - YoRPG.java: 87: error: constructor Protagonist in class Protagonist cannot be applied to given types;
+     pat = new Protagonist( name );
           ^
           required: no arguments
           found: String
           reason: actual and formal argument lists differ in length
-
- *
+ * - Protagonist and Monster should have an instance variable with their health level. isAlive should check if that value is > 0.
+ * - The attack method for Protagonist should have Monster as an input and deal a random amount of damage.
+ * - How does specialize and normalize work?
  **********************************************/
 
 import java.io.*;
@@ -170,9 +178,9 @@ public class YoRPG {
     //As usual, move the begin-comment bar down as you progressively
     //test each new bit of functionality...
 
-    /*================================================
     //loading...
     YoRPG game = new YoRPG();
+
     int encounters = 0;
     while( encounters < MAX_ENCOUNTERS ) {
     if ( !game.playTurn() )
@@ -181,6 +189,7 @@ public class YoRPG {
     System.out.println();
     }
     System.out.println( "Thy game doth be over." );
+    /*================================================
 	  ================================================*/
   }//end main
 
