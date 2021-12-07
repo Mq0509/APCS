@@ -2,11 +2,13 @@
 // APCS pd7
 // HW43 -- Array of Steel / encapsulation (basic SuperArray functionality)
 // 2021-12-06
+// time spent: 0.66 hrs
 //
 // DISCO
 // -
+//
 // QCC
-// -
+// - We can increase the size of an array by making a new array and copying over the contents of the old array
 
 /***************************
  * class SuperArray
@@ -44,11 +46,11 @@ public class SuperArray
   //double capacity of SuperArray
   private void expand()
   {
-    int[] _another = new int[_size * 2];
-    for(int i = 0; i < _size; i++) {
+    int[] _another = new int[_size * 2]; // makes new array with double the size
+    for(int i = 0; i < _size; i++) { // copies over values from old array
       _another[i] = _data[i];
     }
-    _size *= 2;
+    _size *= 2; // updt size
     _data = _another;
   }
 
@@ -88,9 +90,11 @@ public class SuperArray
         System.out.print( "---------------- \n");
         System.out.println("Printing expanded SuperArray curtis...");
         System.out.println(curtis);
-      System.out.print( "---------------- \n");
       }
+      System.out.print( "---------------- \n");
       /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
+
+
 }//end class
