@@ -1,6 +1,17 @@
 /**
-   class BinSearch
-   Binary search on array of Comparables
+KLEEMEX -- Lindsay Phung, May Qiu, Xinqing Lin
+APCS
+HW48 -- Halving the Halves
+2021-12-16
+time spent: 1 hr
+DISCO:
+- Comparables cannot be compared with the boolean operators (<, >). You must
+use the .compareTo() method.
+- hi and lo are the index numbers, and not the actual values.
+QCC:
+- Why do you need to set tPos in binSearchRec?
+- Even if homework is not posted on the website, announcements during class time
+take precedence.
 **/
 
 public class BinSearch
@@ -16,8 +27,8 @@ public class BinSearch
   {
     //uncomment exactly 1 of the 2 stmts below:
 
-    //return binSearchIter( a, target, 0, a.length-1 );
-    return binSearchRec( a, target, 0, a.length-1 );
+    return binSearchIter( a, target, 0, a.length-1 );
+    //return binSearchRec( a, target, 0, a.length-1 );
   }
 
 
@@ -30,20 +41,24 @@ public class BinSearch
 
     int m = (lo + hi) / 2; //init mid pos var
 
-    if (a[m] == target){
-      return m;
+    if (lo > hi) {
+      return tPos;
     }
-    if (a[m].compareTo(target) > 0){
-      binSearchRec(a, target, lo, m);
+
+    if ( a[m].compareTo(target) == 0 ) {
+      tPos = m; //return m;
     }
-    if (a[m].compareTo(target) < 0){
-      binSearchRec(a, target, m, hi);
+    if (a[m].compareTo(target) > 0) {
+      tPos = binSearchRec(a, target, 0, m-1); //binSearchRec(a, target, lo, m - 1);
+    }
+    if (a[m].compareTo(target) < 0) {
+      tPos = binSearchRec(a, target, m+1, hi); //binSearchRec(a, target, m + 1, hi);
     }
 
     return tPos;
   }//end binSearchRec
 
-/*
+
   public static int binSearchIter( Comparable[] a,
                                    Comparable target,
                                    int lo, int hi )
@@ -52,7 +67,7 @@ public class BinSearch
     int tPos = -1; //init return var to flag value -1
     int m = (lo + hi) / 2; //init mid pos var
 
-    while (_lo != _hi) {  // run until lo & hi cross
+    while (lo <= hi) {  // run until lo & hi cross //lo != hi
 
       m = (lo + hi) / 2;  //update mid pos var
 
@@ -60,16 +75,16 @@ public class BinSearch
         return m;
       }
       if(a[m].compareTo(target) > 0) { // value at mid index higher than target
-        _lo = m+1;
+        hi = m - 1;
       }
       if(a[m].compareTo(target) < 0) { // value at mid index lower than target
-        _hi = m-1;
+        lo = m + 1;
       }
     }
     return tPos;
   }//end binSearchIter
 
-*/
+
 
   //tell whether an array is sorted in ascending order
   private static boolean isSorted( Comparable[] arr )
@@ -121,8 +136,6 @@ public class BinSearch
     printArray( iArr2 );
     System.out.println( "iArr2 sorted? -- " + isSorted(iArr2) );
 
-    /*----------------------------------------------------
-
     Comparable[] iArr3 = new Integer[10000];
     for( int i = 0; i < iArr3.length; i++ ) {
     iArr3[i] = i * 2;
@@ -132,12 +145,13 @@ public class BinSearch
     System.out.println( "iArr3 sorted? -- " + isSorted(iArr3) );
 
     //search for 6 in array
-    System.out.println( binSearch(iArr2,2) );
-    System.out.println( binSearch(iArr2,4) );
-    System.out.println( binSearch(iArr2,6) );
-    System.out.println( binSearch(iArr2,8) );
-    System.out.println( binSearch(iArr2,13) );
-    System.out.println( binSearch(iArr2,42) );
+    System.out.println( "Searching for 2... " + binSearch(iArr2,2) );
+    System.out.println( "Searching for 4... " + binSearch(iArr2,4) );
+    System.out.println( "Searching for 6... " + binSearch(iArr2,6) );
+    System.out.println( "Searching for 8... " + binSearch(iArr2,8) );
+    System.out.println( "Searching for 13... " + binSearch(iArr2,13) );
+    System.out.println( "Searching for 42... " + binSearch(iArr2,42) );
+
 
     //search for 43 in array
     System.out.println( binSearch(iArr2,43) );
@@ -149,6 +163,7 @@ public class BinSearch
 
     //search for 43 in array
     System.out.println( binSearch(iArr3,43) );
+    /*----------------------------------------------------
     ====================================================*/
 
 
