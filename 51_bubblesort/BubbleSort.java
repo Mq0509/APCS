@@ -2,7 +2,7 @@
 // APCS pd7
 // HW51 -- implementing bubblesort
 // 2022-01-03
-// time spent:  hrs
+// time spent: 1.166 hrs
 
 /******************************
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
@@ -13,9 +13,8 @@
  * We repeat this process for data.size() - 1 passes.
  *
  * DISCO:
- * - In a situation where a for loop is inembeded in another for loop, they can't use the same variable in
- *
-   - Ctrl+F not "array list" but "ArrayList"
+ * - In a situation where a for loop is inembeded in another for loop, they can't use the same variable in their initializations.
+ * - Ctrl+F not "array list" but "ArrayList"
  *
  * QCC:
  * q0: If a pass requires no swaps, what do you know?
