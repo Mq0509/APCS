@@ -55,7 +55,8 @@ import java.util.ArrayList;
 public class StatPrinter
 {
   // instance variable for frequencies of each integer in input ArrayList
-  private ArrayList <Integer> _frequency;
+  protected ArrayList <Integer> _frequency;
+  private ArrayList <Integer> _data;
 
 
   //*************** QUESTION 02 **************************
@@ -66,9 +67,18 @@ public class StatPrinter
   //  _frequency would be [0,0,3,2,0,1]
   public StatPrinter( ArrayList <Integer> data )
   {
-    ArrayList <Integer> frequency = new ArrayList<Integer> (max(data)+1);
-    for(int i = 0; i<frequency.size();i++){
-        frequency.set(data.get(i),frequency.get(data.get(i))+1);
+    _data = data;
+
+    _frequency = new ArrayList<Integer>();
+    for(int i=0; i< max(data)+1; i++){
+      _frequency.add(0);
+    }
+
+    for(int i = 0; i < max(data) + 1;i++){
+        if(i < data.size()){
+          _frequency.set(data.get(i),_frequency.get(data.get(i))+1);
+          System.out.println(_frequency);
+        }
       }
     }
 
@@ -77,7 +87,7 @@ public class StatPrinter
   //*************** QUESTION 01 **************************
   //precond:  data.size() > 0
   //postcond: returns largest integer in data
-  public Integer max( ArrayList <Integer> data )
+  public static Integer max( ArrayList <Integer> data )
   {
     Integer max = 0;
     for(int i = 0; i<data.size();i++){
@@ -99,10 +109,10 @@ public class StatPrinter
   //    isLocalMode(0) -> false
   //    isLocalMode(1) -> true
   //    isLocalMode(5) -> true
-  // public boolean isLocalMode( int i )
-  // {
-  //   /* YOUR IMPLEMENTATION HERE */
-  // }
+  public boolean isLocalMode( int i )
+  {
+    return (i > 0 && i < _data.size()-1 && _data.get(i-1) < _data.get(i) && _data.get(i+1) < _data.get(i));
+  }
 
 
   //*************** QUESTION 04 **************************
@@ -121,13 +131,5 @@ public class StatPrinter
     /* YOUR IMPLEMENTATION HERE */
   }
 public static void main(String[] args) {
-  ArrayList<Integer> test = new ArrayList<Integer>();
-  test.add(2);
-    test.add(2);
-      test.add(2);
-        test.add(2);
-          test.add(3);
-          System.out.println(max(test));
-
 }
 }//end class StatPrinter
