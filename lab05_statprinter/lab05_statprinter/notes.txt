@@ -1,0 +1,31 @@
+
+Team Phantom Tollbooth (Clyde Sinclair, Fierce Dragon)
+APCS pd0
+L05 -- pulling it together
+2022-02-03r
+time spent:  1 hrs
+
+
+DISCO
+------------------------------------------------
+*
+================================================
+
+
+QCC
+------------------------------------------------
+* We first tried to initialize an ArrayList and set the size to max(data)+1, but
+frequency remained size 0. Instead, we made a for loop that added 0s to the array.
+*Max is non-static so we could not test it in the driver without making it static.
+*We made frequency not private so that we could test the constructor.
+- We had to change a for loop for(Integer i : al2) to for(int index = 0; index < sp2._frequency.size(); index++ )
+because prior, it wasn't working as anticipated - it was using the data list to find indexes in the frequency ArrayList
+but we wanted to iterate through the frequency list through each index independently
+
+================================================
+
+
+MISC
+------------------------------------------------
+*
+================================================
