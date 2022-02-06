@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Team IDC (Vansh Saboo, Jeffery Tang, May Qiu)
+// APCS pd6
 // L05 -- pulling it together
 // 2022-02-03r
-// time spent:  hrs
+// time spent:  1.5 hrs
 
 /***
  * class StatPrinterApp
@@ -19,10 +19,8 @@ public class StatPrinterApp
     /*=================
       data:
       [2,5,2,3,4,4,4]
-
       desired _freq:
       [0,0,2,1,3,1]
-
       freq initially:
       [0,0,0,0,0,0]
       =================*/
@@ -60,11 +58,17 @@ public class StatPrinterApp
     System.out.println( "sp2 testing: " );
     System.out.println( "al2 max: " + sp1.max(al2) );
     System.out.println( "local modes: " );
-    for( Integer i : al2 ) {
-    System.out.println( i + " is local mode?\t" + sp2.isLocalMode(i) );
+    // for(int index = 0; index < sp2._frequency.size(); index++ ) {
+    // System.out.println( "Index " + index + "is local mode?\t" + sp2.isLocalMode(index) );
+    // }
+    for(Integer i : al2) {
+     System.out.println( i + " is local mode?\t" + sp2.isLocalMode(i) );
     }
-    // System.out.println( "histogram:" );
-    // sp2.printHistogram( 50 );
+    System.out.println("Local mode list: " + sp2.getLocalModes() );
+
+
+    System.out.println( "histogram:" );
+    sp2.printHistogram( 50 );
   }
 
 }//end StatPrinterApp
