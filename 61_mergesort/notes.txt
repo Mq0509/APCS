@@ -1,0 +1,33 @@
+// Team Whatever -- May Qiu and Andrew P.
+// APCS pd6
+// HW61 -- Instructions so Simple...
+// 2022-02-08t
+// time spent: 2hrs
+
+DISCO
+------------------------------------------------
+-When a thinker has one card, it is sorted. Else, it is not sorted.
+-In the start, Thinkerens give out all their cards to two people.
+-Those two people proceed to the same thing until everyone has either 1 or 2 cards.
+-Those who had one card gave the cards to the person who gave them the card.
+-That person would then order it and give it to the person who gave it to them.
+-The person who now has no cards would raise their hand to get more cards to sort.
+================================================
+
+
+QCC
+------------------------------------------------
+* How efficient is mergeSort compared to other sorting methods?
+* Is there any way to make this mergeSort end early?
+================================================
+
+
+THINKER FIRMWARE
+------------------------------------------------
+* If stack at any time is already sorted, you can only give back, and not give away.
+* When you have > 1 card and it is unsorted, give two people half your amount of cards each.
+* When you have = 1 card, give card to person who gave you card.
+* When you have = 0 card, raise hand to get more cards.
+* When you receive > 1 card, sort and give to the person who gave you the cards.
+
+================================================
