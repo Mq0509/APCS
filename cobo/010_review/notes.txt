@@ -1,0 +1,16 @@
+Activity 1
+1a) public static double sentimentVal( String word )
+1b) It requires a String. If you do not put a String input, it will throw an
+    error (incorrect type).
+1c) It returns a double.
+
+2)  sentimentVal("accidental") -> -2.07
+    sentimentVal("account") -> 0.64
+    sentimentVal("acceptable") -> -0.12
+    
+3a) It will compile because "warm" is a string and the parameter is a string.
+3b) It will not compile because 0.5 is a double, not a string, so it does not
+    parameter requirements.
+3c) It will not compile because the parameter is one string, not two.
+
+Activity 2
