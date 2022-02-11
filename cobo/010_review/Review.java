@@ -103,6 +103,34 @@ public class Review {
     System.out.println(sentimentVal(b));
     System.out.println(sentimentVal(c));
   }
+
+  public static double totalSentiment(String fileName){
+    String review = textToString(fileName);
+    String[] reviewArray = review.split(" ");
+    double answer = 0.0;
+    for(int i = 0; i < reviewArray.length; i++){
+      answer += sentimentVal(reviewArray[i]);
+    }
+    return answer;
+  }
+
+  public static int starRating(String fileName){
+    if(totalSentiment(fileName) > 30) {
+      return 4;
+    }
+    else if(totalSentiment(fileName) > 20){
+      return 3;
+    }
+    else if(totalSentiment(fileName) > 10){
+      return 2;
+    }
+    else if(totalSentiment(fileName) > 0){
+      return 1;
+    }
+    else{
+      return 0;
+    }
+  }
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none
    */
@@ -167,6 +195,9 @@ public class Review {
     }
   }
   public static void main(String[] args) {
+    System.out.println("Testing sentimentValTester: ");
     sentimentValTester("accidental", "account", "acceptable");
+    System.out.println("Testing totalSentiment: " + totalSentiment("SimpleReview.txt"));
+    System.out.println("Testing starRating: " + starRating("cleanSentiment.csv"));
   }
 }
