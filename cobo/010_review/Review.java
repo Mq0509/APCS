@@ -38,7 +38,7 @@ public class Review {
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
         System.out.println(temp);
-        posAdjectives.add(temp);
+        posAdjectives.add(temp.toLowerCase());
       }
       input.close();
     }
@@ -50,7 +50,7 @@ public class Review {
      try {
       Scanner input = new Scanner(new File("negativeAdjectives.txt"));
       while(input.hasNextLine()){
-        negAdjectives.add(input.nextLine().trim());
+        negAdjectives.add(input.nextLine().trim().toLowerCase());
       }
       input.close();
     }
@@ -194,10 +194,28 @@ public class Review {
       return randomNegativeAdj();
     }
   }
+
+  public static String fakeReview(String fileName) {
+    String review = textToString(fileName);
+    String[] words = review.split(" ");
+    String ans = "";
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].charAt(0) == '*') {
+        while (sentimentVal(words[i]) > -.5 && sentimentVal(words[i]) < .5) {
+          words[i] = randomAdjective();
+        }
+      }
+      ans += words[i] + " ";
+    }
+    return ans;
+  }
+
   public static void main(String[] args) {
     System.out.println("Testing sentimentValTester: ");
     sentimentValTester("accidental", "account", "acceptable");
     System.out.println("Testing totalSentiment: " + totalSentiment("SimpleReview.txt"));
     System.out.println("Testing starRating: " + starRating("cleanSentiment.csv"));
+
+    System.out.println("Testing fakeReview: " + fakeReview("SimpleReview.txt"));
   }
 }
