@@ -11,8 +11,11 @@ public class array220{
       return array220(nums, index + 1);
     }
     public static void main(String[] args) {
-      System.out.println(array220([1, 2, 20], 0) + "true");
-      System.out.println(array220([3, 30], 0) + "true");
-      System.out.println(array220([3], 0) + "false");
+      int[] a = {1,2,20};
+      int[] b = {3,30};
+      int[] cries = {3};
+      System.out.println(array220(a, 0) + "\nReturn:true");
+      System.out.println(array220(b, 0) + "\nReturn:true");
+      System.out.println(array220(cries, 0) + "\nReturn:false");
     }
   }
