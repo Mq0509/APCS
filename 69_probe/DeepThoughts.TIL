@@ -1,0 +1,45 @@
+Lemon Water: May Qiu, Emily Ortiz, Josiah Moltz
+APCS pd6
+HW69 -- Making Sense
+2022-03-02
+time spent: 1
+
+Times, NO PRINT, RANDOM START
+n=5
+times: .298, .286, .298, .295, .266
+avg: .2886
+n=6
+times: .631, 2.104, .261, .290, .604
+avg: .778
+n=7
+Didn't execute in a reasonable amount of time.
+
+q0: From any starting position, can an open tour always be found? Explain.
+On a 5X5 board, this is FALSE since starting position (3,6) fails.
+Not sure about higher n.
+
+q1: Same, but for closed tour.
+We didn't actually find any closed tours (granted we didn't look too hard) but...
+If a closed tour exists, then you can find a closed tour starting anywhere
+Proof: Lets say you have a closed tour going from squares 1,2,...,j
+1->2->...->j
+You can loop back from j to 1 (since the tour is closed), so you have
+1->2->...->j->1
+Now, to start at any square, just "shift the loop".
+If we wanted to start at n, it would look like
+n->n+1->...->j->1->2->...->n-1->n
+Additionally, when n is odd it can not exist.
+A knight always alternates which color square it is on.
+Thus, a closed tour must end on a different color square than it started on (in order to jump back onto the original square).
+This can only happen when we make a even number of moves total.
+
+q2: How do you explain the increase in execution time as n increases?
+Bigger numbers are... bigger?
+As n gets bigger, the state space gets bigger, a LOT bigger.
+We can estimate and say that each node in the tree has 7 children, one for each knight move - 1 (One move will take us backwards to the previous knight).
+Increasing n by 1 increase the board size by 2n+1.
+Thus we introduce roughly 7^(2n+1) new cases, many of which we will have to check before finding a solution.
+
+q3: Thoughts on optimization?
+Decrease print statements.
+Split the board up into smaller boards. If we can find a knight tour on each of these boards, we can "connect" them (this might not always work)
