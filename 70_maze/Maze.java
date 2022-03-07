@@ -6,6 +6,20 @@
 // time spent: 1 hrs
 
 /***
+CODE EXPLANATION:
+  Base cases:
+    Solved:
+      If it is solved, we just need to go backwards along our path back to where we started.
+      Thus, we just return the code as is.
+    We are at the end of the maze:
+      If we are at the end of the maze, we have just solved the maze. Thus we make _solved true, and return.
+    We are looking off the map:
+      If we are looking off the map, there is nothing to do but stop before we go off the map, so we just return.
+  Body:
+    Set current square to '@' to show that we are currently probing from this square.
+    Attempt to solve the maze by sequentially checking every if a solution exists for each of the 4 squares we can move to.
+    If no solution exists from this squre, replace the square with a '.' and return, since there is nothing left to do.
+    
  * DISCO
  * 0. # is an OCTOTHORPE not a "hashtag" but May is going to call it a hastag anyways B)
  * 1. Default terminal window is 80X25
@@ -150,6 +164,7 @@ class MazeSolver
       solve(x-1, y);
       _maze[x][y] = '.';
       System.out.println( this ); //refresh screen
+      return;
     }
   }
 
