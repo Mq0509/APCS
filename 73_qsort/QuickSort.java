@@ -1,20 +1,30 @@
-//Clyde Sinclair
+//Mr. K (Kaitlin, Raven, May)
 //APCS pd0
 //HW72 -- QuickSort
 //2022-03-09w
-//time spent: _h
+//time spent: 1 h
 
 /***
  * class QuickSort
  * Implements quicksort algo to sort an array of ints in place
  *
+    Question:
+    What is the best pivot point?
  * 1. Summary of QuickSort algorithm:
  * QSort(arr):
+ The method's base case is if the array length is 1 or the difference
+ between the upper and lower bounds is equal to 1. If so, the method ends.
+ If not, it continously runs partitions with new upper and lower bounds until the
+ base case is fulfilled. These upper and lower bounds are when we choose the pivot
+ position to be the average of the bounds. We use that return value as the new upper
+ and lower bound.
  *
  * 2a. Worst pivot choice and associated run time:
- *
+ *  Worst pivot choice is the extremes.
+    Run-time: O(n^2)
  * 2b. Best pivot choice and associated run time:
- *
+ *  Best pivot choice would be the median of the numbers.
+    Run-time: O(nlog(n))
  * 3. Approach to handling duplicate values in array:
  *
  **/
@@ -72,20 +82,17 @@ public class QuickSort
     if(d.length <= 1){
       return;
     }
-    int c = d.length/2;
-    qHelper(d, 0, d.length-1, c);
+    qHelper(d, 0, d.length-1);
 
   }
 
-  public static void qHelper(int[] d, int lower, int upper, int mid){
-    int s = Partition.partition(d, lower, upper, mid);
+  public static void qHelper(int[] d, int lower, int upper){
+    int s = Partition.partition(d, lower, upper);
     if(upper-lower <= 1){
       return;
     }
-    int newMid = (upper + s)/2;
-    qHelper(d,s,upper,newMid);
-    int otherMid = (s + lower)/2;
-    qHelper(d,lower, s, otherMid);
+    qHelper(d,s,upper);
+    qHelper(d,lower,s);
   }
 
   //main method for testing
