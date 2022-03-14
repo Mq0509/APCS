@@ -27,5 +27,4 @@ public interface List
 
   //return length of list
   public int size();
-
 }//end interface
