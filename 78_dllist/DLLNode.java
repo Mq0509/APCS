@@ -1,24 +1,17 @@
-/**
- * Mr. K: May Qiu, Kaitlin Ho, Raven (Ruiwen) Tang
- * APCS pd06
- * HW77 -- INSERT|REMOVE
- * 2022-03-14
- * time spent: 1.5 hr
- * KtS consumed: 1
- **/
-
 import java.util.ArrayList;
-public class LLNode
+public class DLLNode
 {
   //instance vars
   private String _value;
-  private LLNode _next;
+  private DLLNode _next;
+  private DLLNode _prev;
 
   // constructor
-  public LLNode( String value, LLNode next )
+  public DLLNode( String value, DLLNode next, DLLNode prev)
   {
     _value = value;
     _next = next;
+    _prev = prev;
   }
 
 
@@ -28,9 +21,14 @@ public class LLNode
     return _value;
   }
 
-  public LLNode getNext()
+  public DLLNode getNext()
   {
     return _next;
+  }
+
+  public DLLNode getPrev()
+  {
+      return _prev;
   }
   //--------------^  ACCESSORS  ^--------------
 
@@ -43,11 +41,18 @@ public class LLNode
     return temp;
   }
 
-  public LLNode setNext( LLNode newNext )
+  public DLLNode setNext( DLLNode newNext )
   {
-    LLNode temp = _next;
+    DLLNode temp = _next;
     _next = newNext;
     return temp;
+  }
+
+  public DLLNode setPrev( DLLNode newPrev)
+  {
+      DLLNode temp = _prev;
+      _prev = newPrev;
+      return temp;
   }
   //--------------^  MUTATORS  ^--------------
 
@@ -63,8 +68,8 @@ public class LLNode
   {
 
     //Below is an exercise in creating a linked list...
-    LLNode test = new LLNode("ice cream",null);
-    test.setNext( new LLNode ("Oreos", null));
+    DLLNode test = new DLLNode("ice cream",null, null);
+    test.setNext( new DLLNode ("Oreos", null, null));
     test.setCargo("Strawberries");
     /* A naive list traversal, has side effects.... ?? */
        while( test != null ) {
@@ -73,14 +78,14 @@ public class LLNode
        }
 
     //Create a node
-    LLNode first = new LLNode( "cat", null );
+    DLLNode first = new DLLNode( "cat", null, null);
 
     //Create a new node after the first
-    first.setNext( new LLNode( "dog", null ) );
+    first.setNext( new DLLNode( "dog", null, first) );
 
     //Create a third node after the second
-    first.getNext().setNext( new LLNode( "cow", null ) );
+    first.getNext().setNext( new DLLNode( "cow", null, first.getNext() ) );
 
   }//end main
 
-}//end class LLNode
+}//end class DLLNode
