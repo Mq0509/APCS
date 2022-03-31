@@ -1,0 +1,13 @@
+Mr. K (May, Raven, Kaitlin)
+APCS
+HW85 -- Leon Leonwood Stack
+2022-03-30
+time spent: .6 hrs
+
+QCC
+-It is really important to import arraylists and linked lists when needed. Otherwise, many cannot find symbol errors will pop up.
+-If we use linked lists or arraylists, a size variable is no longer needed because arraylists and linkedlists will automatically update size.
+-Do they have the same run times for these methods (according to Piazza they do)
+
+DISCO
+-It is necessary to check if a list is empty or not before popping or peeking because it is not done for us by ArrayList and LinkedList.
