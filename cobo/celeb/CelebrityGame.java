@@ -43,7 +43,7 @@ public class CelebrityGame
 	 */
 	public void prepareGame()
 	{
-		celebGameList = new ArrayList<Celebrity>();
+		// celebGameList = new ArrayList<Celebrity>();
 		gameWindow.replaceScreen("START");
 	}
 
@@ -73,14 +73,16 @@ public class CelebrityGame
 	 * Sets the current celebrity as the first item in the list. Opens the game
 	 * play screen.
 	 */
-	public void play()
-	{
+
+	public void play(){
+	CelebrityPanel stupid = new CelebrityPanel(this);
 		System.out.println("play!");
 		if (celebGameList != null && celebGameList.size() > 0){
 			this.gameCelebrity = celebGameList.get(0);
 			gameWindow.replaceScreen("GAME");
 			prepareGame();
-
+			stupid.addClue(currentCelebrity.getClue());
+			//stupid.setupPanel();
 		}
 	}
 
