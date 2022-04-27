@@ -5,7 +5,6 @@ L09: Some Folkds Call It A Charades
 2022-04-26
 time spent: 1 hr
 */
-package celeb;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +24,7 @@ public class CelebrityGame
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
-	 CelebrityFrame gameWindow = new CelebrityFrame(this);
+	 CelebrityFrame gameWindow;
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */
@@ -76,9 +75,12 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
+		System.out.println("play!");
 		if (celebGameList != null && celebGameList.size() > 0){
 			this.gameCelebrity = celebGameList.get(0);
 			gameWindow.replaceScreen("GAME");
+			prepareGame();
+
 		}
 	}
 
@@ -94,7 +96,6 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		Celebrity currentCelebrity;
 		if (type.equals("Literature")) {
 			currentCelebrity = new LiteratureCelebrity(name, guess);
 		}
