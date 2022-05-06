@@ -2,7 +2,7 @@ RachelHateCult :: Xinqing Lin, Jeffery Tang, May Qiu
 APCS pd6
 HW93 -- exploring tree properties, extracting actionable intel from traversals
 2022-05-05r
-time spent:  10 hrs
+time spent:  .5 hrs
 
 
 DISCO
