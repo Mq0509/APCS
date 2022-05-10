@@ -1,4 +1,11 @@
 /**
+RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
+APCS Pd 6
+HW95 -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
+2022-05-09
+time spent: .8 hrs
+**/
+/**
  * class TreeNode
  * SKELETON
  * Implements a node for use in a binary tree.
