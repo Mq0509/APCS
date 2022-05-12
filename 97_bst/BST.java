@@ -24,10 +24,7 @@ public class BST
    */
   BST()
   {
-    _root = null;
-  }
-
-
+    _root = n
   /**
    * void insert( int )
    * Adds a new data element to tree.
@@ -38,180 +35,18 @@ public class BST
 
     if ( _root == null ) {
       _root = newNode;
-      return;
-    }
-    insert( _root, newNode );
-  }
-  //recursive helper for insert(int)
-  public void insert( TreeNode stRoot, TreeNode newNode )
-  {
-    if ( newNode.getValue() < stRoot.getValue() ) {
-      //if no left child, make newNode the left child
-      if ( stRoot.getLeft() == null )
-        stRoot.setLeft( newNode );
-      else //recurse down left subtree
-        insert( stRoot.getLeft(), newNode );
-      return;
-    }
-    else { // new val >= curr, so look down right subtree
-      //if no right child, make newNode the right child
-      if ( stRoot.getRight() == null )
-        stRoot.setRight( newNode );
-      else //recurse down right subtree
-        insert( stRoot.getRight(), newNode );
-      return;
+     
     }
   }//end insert()
 
 
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~v~~TRAVERSALS~~v~~~~~~~~~~~~~~~~~~~~~
-  // each traversal should simply print to standard out
-  // the nodes visited, in order
-
-  //process root, recurse left, recurse right
-  public void preOrderTrav()
-  {
-    preOrderTrav( _root );
-  }
-  public void preOrderTrav( TreeNode currNode )
-  {
-    if ( currNode == null )
-      return;
-    System.out.print( currNode.getValue() + " " );
-    preOrderTrav( currNode.getLeft() );
-    preOrderTrav( currNode.getRight() );
-  }
-
-  //recurse left, process root, recurse right
-  public void inOrderTrav()
-  {
-    inOrderTrav( _root );
-  }
-  public void inOrderTrav( TreeNode currNode )
-  {
-    if ( currNode == null )
-      return;
-    inOrderTrav( currNode.getLeft() );
+  //~~() );
     System.out.print( currNode.getValue() + " " );
     inOrderTrav( currNode.getRight() );
   }
 
   //recurse left, recurse right, process root
-  public void postOrderTrav()
-  {
-    postOrderTrav( _root );
-  }
-  public void postOrderTrav( TreeNode currNode )
-  {
-    if ( currNode == null )
-      return;
-    postOrderTrav( currNode.getLeft() );
-    postOrderTrav( currNode.getRight() );
-    System.out.print( currNode.getValue() + " "  );
-  }
-
-  public String inOrderTravStr( TreeNode currNode ) {
-    String retStr = "";
-    if ( currNode == null )
-      return retStr;
-    retStr += inOrderTravStr( currNode.getLeft() );
-    retStr += " " + currNode.getValue();
-    retStr += inOrderTravStr( currNode.getRight() );
-    return retStr;
-  }
-  public String preOrderTravStr( TreeNode currNode ) {
-    String retStr = "";
-    if ( currNode == null )
-      return retStr;
-    retStr += " " + currNode.getValue();
-    retStr += preOrderTravStr( currNode.getLeft() );
-    retStr += preOrderTravStr( currNode.getRight() );
-    return retStr;
-  }
-  public String postOrderTravStr( TreeNode currNode ) {
-    String retStr = "";
-    if ( currNode == null )
-      return retStr;
-    retStr += postOrderTravStr( currNode.getLeft() );
-    retStr += postOrderTravStr( currNode.getRight() );
-    retStr += " " + currNode.getValue();
-    return retStr;
-  }
-
-  //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-  //~~~~~~~~~~~~~v~~MISC.HELPERS~~v~~~~~~~~~~~~~~~~~~~
-  public boolean isLeaf( TreeNode node )
-  {
-    return ( node.getLeft() == null
-             &&
-             node.getRight() == null );
-  }
-  //~~~~~~~~~~~~~^~~MISC.HELPERS~~^~~~~~~~~~~~~~~~~~~~
-
-
-  //overridden toString
-  public String toString()
-  {
-    return
-      " pre-order trav:" + preOrderTravStr( _root ) + '\n' +
-      "  in-order trav:" + inOrderTravStr( _root ) + '\n' +
-      "post-order trav:" + postOrderTravStr( _root ) + '\n' +
-      "         height: " + height() + '\n' +
-      "     num leaves: " + numLeaves() 
-      ;
-  }
-
-
-  /**
-   * TreeNode search(int)
-   * returns pointer to node containing target,
-   * or null if target not found
-   */
-  TreeNode search( int target )
-  {
-    return search( target, _root );
-  }
-  TreeNode search( int target, TreeNode currNode )
-  {
-    if ( currNode==null || currNode.getValue()==target )
-      return currNode;
-    else if ( target < currNode.getValue() )
-      return search( target, currNode.getLeft() );
-    else if ( target > currNode.getValue() )
-      return search( target, currNode.getRight() );
-    else
-      return null; //to get past compiler
-  }
-
-
-  /**
-   * int height()
-   * returns height of this tree (length of longest leaf-to-root path)
-   * eg: a 1-node tree has height 0
-   */
-  public int height()
-  {
-    return height( _root );
-  }
-  //recursive helper for height()
-  public int height( TreeNode currNode )
-  {
-    if ( currNode==null ) //Q: Why cannot use .equals() ?
-      return 0;
-    if ( isLeaf(currNode) )
-      return 0;
-    else //height is 1 for this node + height of deepest subtree
-      return 1 + Math.max( height(currNode.getLeft()),
-                           height(currNode.getRight()) );
-  }
-
-
-  /**
-   * int numLeaves()
+  public void
    * returns number of leaves in tree
    */
   public int numLeaves()
