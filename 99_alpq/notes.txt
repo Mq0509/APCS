@@ -1,0 +1,15 @@
+RachelHateCult: Xinqing Lin, Jeffery Tang, May Qiu
+APCS Pd 6
+HW 99 -- Some Are More Equal Than Others, Codified
+2022-05-13
+time spent: .5 hrs
+
+DISCO
+- Static methods in interfaces must have an implementation. This makes sense
+  because a static method should have the same implementation across all classes
+  that implement it.
+  - Extension of the above: the method can't be both static and abstract (for the same reason)
+
+QCC
+- If we were to use Strings instead of ints as the values in the ArrayList, how would
+  we determine priority? How could we generalize our ArrayPriorityQueue?
