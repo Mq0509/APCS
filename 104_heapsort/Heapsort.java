@@ -1,9 +1,14 @@
-/**
+/*RachelHateCult(Xinqing Lin, May Qiu, Jeffery Tang)
+APCS
+HW 104_heapsort
+2022-05-19
+time spent: .3 hrs
+*/
+/*
  * class Heapsort
  * SKELETON
  * sorts in-place by heapifying data, then repeatedly pulling from heap
  */
-
 public class Heapsort
 {
 
