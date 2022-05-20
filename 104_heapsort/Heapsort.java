@@ -1,14 +1,17 @@
-/*RachelHateCult(Xinqing Lin, May Qiu, Jeffery Tang)
-APCS
-HW 104_heapsort
-2022-05-19
-time spent: .3 hrs
-*/
 /*
+  RachelHateCult: May Qiu, Jeffery Tang, Xinqing Lin
+  APCS
+  HW104 -- Heapify
+  2022-05-19
+  time spent: .5 hrs
+*/
+
+/**
  * class Heapsort
  * SKELETON
  * sorts in-place by heapifying data, then repeatedly pulling from heap
  */
+
 public class Heapsort
 {
 
@@ -33,34 +36,39 @@ public class Heapsort
 
     //STEP 2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = data.length; lastLeaf >= 0; i--) {
+    for( int lastLeaf = data.length - 1; lastLeaf >= 0; lastLeaf--) {
       //set aside root val
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
-      swap(data[0],data[lastLeaf]);
+      swap(0, lastLeaf, data);
       //walk now-out-of-place root node down the tree...
-      int pos =
+      int pos = 0;
       int minChildPos;
       int maxChildPos;
 
-      while(  ) {
+      while( pos < data.length ) {
 
         //choose child w/ max value, or check for child
+        maxChildPos = maxChildPos(pos, lastLeaf, data);
+        minChildPos = minChildPos(pos, lastLeaf, data);
 
         //if no children, then i've walked far enough
-        if ( maxChildPos == -1 )
+        if ( minChildPos == -1 )
           break;
         //if i am greater than my greatest child, i've walked far enough
-        else if (  )
+        else if ( data[pos] > data[maxChildPos] )
           break;
         //if i am > least child, swap with that child
         else {
-
+          swap(minChildPos, pos, data);
+          pos = minChildPos;
+          printArr(data);
         }
       }
 
       //overwrite last leaf with old root val
+      data[lastLeaf] = tmp;
 
     }
 
@@ -72,49 +80,48 @@ public class Heapsort
 
 
 
-  private void minHeapify( int[] a )
+  private static void minHeapify( int[] a )
   {
     for( int i=1; i<a.length; i++ ) {
-      //add a[i] as leaf
-      int addValPos = a[i]; //val to add is next non-heap element
+          //add a[i] as leaf
+          int addValPos = i;//val to add is next non-heap element
 
-      //now must percolate up
-      while(i > 0 ) { //potentially swap until reach root
+          //now must percolate up
+          while( addValPos > 0 ) { //potentially swap until reach root
 
-        //pinpoint parent
-        int parentPos = (addValPos + 1) /2;
+            //pinpoint parent
+            int parentPos = (addValPos - 1) / 2;
 
-        if (a[parentPos] > a[addValPos]) {
-          swap(parentPos,addValPos);
-          addValPos = parentPos;
-        }
-        else
-          break;
+            if ( a[parentPos] > a[addValPos] ) {
+              swap( addValPos, parentPos, a );
+              addValPos = parentPos;
+            }
+            else
+              break;
+          }
       }
-    }
   }//end minHeapify() -- O(?)
 
 
-
-  private void maxHeapify( int[] a )
+  private static void maxHeapify( int[] a )
   {
-      for( int i = 1; i < a.length; i++ ) {
-        //add a[i] as leaf
-        int addValPos = a[i]; //val to add is next non-heap element
+    for( int i=1; i<a.length; i++ ) {
+          //add a[i] as leaf
+          int addValPos = i;//val to add is next non-heap element
 
-        //now must percolate up
-        while(i > 0) { //potentially swap until reach root
+          //now must percolate up
+          while( addValPos > 0 ) { //potentially swap until reach root
 
-          //pinpoint parent
-          int parentPos = (addValPos + 1) /2;
+            //pinpoint parent
+            int parentPos = (addValPos - 1) / 2;
 
-          if (a[parentPos] < a[addValPos]) {
-            swap(parentPos,addValPos);
-            addValPos = parentPos;
+            if ( a[parentPos] < a[addValPos] ) {
+              swap( addValPos, parentPos, a );
+              addValPos = parentPos;
+            }
+            else
+              break;
           }
-          else
-            break;
-        }
       }
   }//end maxHeapify() -- O(?)
 
@@ -128,16 +135,16 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if (  )
+    if ( pos < 0 || pos >= last || lc >= last )
       retVal = -1;
     //if no right child, then left child is only option for min
-    else if (  )
+    else if ( rc >= last )
       retVal = lc;
     //have 2 children, so compare to find least
-    else if (  )
+    else if ( a[lc] < a[rc] )
       retVal = lc;
     else
-
+      retVal = rc;
     return retVal;
   }
 
@@ -146,6 +153,22 @@ public class Heapsort
   //return position of child with greatest value in input array
   private int maxChildPos( int pos, int last, int[] a )
   {
+    int retVal;
+    int lc = 2*pos + 1; //index of left child
+    int rc = 2*pos + 2; //index of right child
+
+    //pos is not in the heap or pos is a leaf position
+    if ( pos < 0 || pos >= a.length || lc >= a.length )
+      retVal = -1;
+    //if no right child, then left child is only option for min
+    else if ( rc >= a.length )
+      retVal = lc;
+    //have 2 children, so compare to find greatest
+    else if ( a[lc] > a[rc] )
+      retVal = lc;
+    else
+      retVal = rc;
+    return retVal;
   }
 
 
@@ -193,8 +216,14 @@ public class Heapsort
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    int[] a = buildArray( 10, 10 );
+    // int[] achel = {3, 8, 4, 2, 1};
+    // minHeapify(achel);
+    // printArr(achel);
+    // maxHeapify(achel);
+    // printArr(achel);
+
+
+    int[] a = {2, 4, 3, 1}; // = buildArray(10, 10);
 
     printArr(a);
 
@@ -203,6 +232,7 @@ public class Heapsort
     h.sort(a);
 
     printArr(a);
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main()
